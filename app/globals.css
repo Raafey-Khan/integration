@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@media (min-width: 768px) {
+  .md\:w-1\/5 {
+      width: 23% !important;
+  }
+}
+
+.swiper-button-prev {
+  left: 10px; /* Adjust the position as needed */
+}
+
+.swiper-button-next {
+  right: 10px; /* Adjust the position as needed */
+}
+
+/* Tailwind classes for background image */
+.swiper-button-prev {
+  @apply bg-center bg-no-repeat;
+  background-size: contain !important;
+  width: 6rem !important;
+ 
+
+  background-image: url('/images/circle-arrow-up-left.png'); /* Adjust the path to your image */
+}
+
+.swiper-button-next {
+  @apply bg-center bg-no-repeat;
+  background-image: url('/images/circle-arrow-up-right.png'); /* Adjust the path to your image */
+  background-size: contain !important;
+  width: 6rem !important;
+}
+
+.swiper-button-next:after, .swiper-button-prev:after{
+  display: none !important; 
+}
+
+.swiper-slide {
+  text-align: center;
+  
+
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
