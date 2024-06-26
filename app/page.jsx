@@ -3,17 +3,18 @@ import Image from "next/image";
 import Head from "next/head";
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 
-import { Navigation } from 'swiper/modules';
+
 export default function Home() {
   return (
   <>
 
 
   <title>Hvs Frontend</title>
-  <main className="bg-custom ">
+  <main className="bg-custom flex flex-col justify-center items-center ">
   <div className="Banner overflow-hidden relative bg-[url('../public/images/Main-Banner.png')] h-screen w-full bg-cover bg-center">
     <div className="container Bannner-txt mx-auto px-4 pt-24 ">
       <h3 className="text-gray-900 text-6xl font-bold mb-6">Comprehensive </h3>
@@ -111,46 +112,132 @@ export default function Home() {
 
   </div>
 
-  <div className="Doctor-section container mx-auto px-4 mt-12 h-full w-full ">
+  <div className="Doctor-section container mx-auto px-4 mt-12 h-full w-full  ">
     <div className="Doctor-header-txt flex flex-col justify-center items-center mt-3  h-full w-full ">
         <h3 className=" font-semibold text-[24px]">Meet Our Consaltant</h3>
         <p className=" px-24 mt-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
     </div>
 
     <div className="slider-container mt-5  h-full p-3 w-full flex justify-center items-center gap-36">
-     <div className="solid-play-btn">
-      <img src="images/left-up.png" alt="" />
-     </div>
-     <div className="doctor-1 flex flex-col justify-center items-center mt-9 ">
-       <img src="images/Doctor-1.png" alt="" />
-       <div className="name-1 flex flex-col items-center">
-        <p className=" mt-5 font-bold text-[26px] text-gray-700">Dr Raj Kadam</p>
-        <p className="text-[16px] mt-3 mb-3 font-medium">Consultant cardiologist</p>
-        <a href="" className="text-blue-400 border-0 border-b-2  border-blue-400 font-bold text-[14px] mt-3">View profile</a>
-       </div>
-     </div>
 
-     <div className="doctor-2 flex flex-col justify-center items-center mt-9">
-       <img src="images/Doctor-2.png" alt="" />
-       <div className="name-2 flex flex-col items-center">
-        <p className=" mt-5 font-bold text-[26px] text-gray-700">Dr Raj Kadam</p>
-        <p className="text-[16px] mt-3 mb-3 font-medium">Consultant cardiologist</p>
-        <a href="" className="text-blue-400 border-0 border-b-2 border-blue-400 font-bold text-[14px] mt-3">View profile</a>
-       </div>
-     </div>
+     <div className='h-full w-full'>
+        <Swiper
+          slidesPerView={3}
+          spaceBetween={30}
+          loop={true}
+          autoplay={{
+            delay: 2500,
+            disableOnInteraction: false,
+          }}
+          pagination={{
+            clickable: true,
+          }}
+          navigation={true}
+          modules={[Navigation, Autoplay]}
+          className="mySwiper "
+          breakpoints={{
+            // when window width is >= 320px
+            320: {
+              slidesPerView: 1,
+              spaceBetween: 10,
+            },
+            // when window width is >= 640px
+            640: {
+              slidesPerView: 2,
+              spaceBetween: 10,
+            },
+            // when window width is >= 1024px
+            1024: {
+              slidesPerView: 3,
+              spaceBetween: 30,
+            
+            },
+          }}
+        >
+          <SwiperSlide>
+            <div className="doctor-1 flex flex-col justify-center items-center mt-9 ">
+              <img src="images/Doctor-1.png" alt="" />
+              <div className="name-1 flex flex-col items-center">
+                <p className="mt-5 font-bold text-[26px] text-gray-700">Dr Raj Kadam</p>
+                <p className="text-[16px] mt-3 mb-3 font-medium">Consultant cardiologist</p>
+                <a href="" className="text-blue-400 border-0 border-b-2 border-blue-400 font-bold text-[14px] mt-3">View profile</a>
+              </div>
+            </div>
 
-     <div className="doctor-3 flex flex-col justify-center items-center">
-       <img src="images/Doctor-3.png" alt="" />
-       <div className="name-3 flex flex-col items-center">
-        <p className=" mt-5 font-bold text-[26px] text-gray-700">Dr Raj Kadam</p>
-        <p className="text-[16px] mt-3 mb-3 font-medium">Consultant cardiologist</p>
-        <a href="" className="text-blue-400 border-0 border-b-2 border-blue-400 font-bold text-[14px] mt-3">View profile</a>
-       </div>
-     </div>
+            
+          </SwiperSlide>
 
-     <div className="solid-play-btn">
-      <img src="images/right-up.png" alt="" />
-     </div>
+          <SwiperSlide>
+            <div className="doctor-1 flex flex-col justify-center items-center mt-9 ">
+              <img src="images/Doctor-1.png" alt="" />
+              <div className="name-1 flex flex-col items-center">
+                <p className="mt-5 font-bold text-[26px] text-gray-700">Dr Raj Kadam</p>
+                <p className="text-[16px] mt-3 mb-3 font-medium">Consultant cardiologist</p>
+                <a href="" className="text-blue-400 border-0 border-b-2 border-blue-400 font-bold text-[14px] mt-3">View profile</a>
+              </div>
+            </div>
+
+            
+          </SwiperSlide>
+
+          <SwiperSlide>
+            <div className="doctor-1 flex flex-col justify-center items-center mt-9 ">
+              <img src="images/Doctor-1.png" alt="" />
+              <div className="name-1 flex flex-col items-center">
+                <p className="mt-5 font-bold text-[26px] text-gray-700">Dr Raj Kadam</p>
+                <p className="text-[16px] mt-3 mb-3 font-medium">Consultant cardiologist</p>
+                <a href="" className="text-blue-400 border-0 border-b-2 border-blue-400 font-bold text-[14px] mt-3">View profile</a>
+              </div>
+            </div>
+
+            
+          </SwiperSlide>
+
+          <SwiperSlide>
+            <div className="doctor-1 flex flex-col justify-center items-center mt-9 ">
+              <img src="images/Doctor-1.png" alt="" />
+              <div className="name-1 flex flex-col items-center">
+                <p className="mt-5 font-bold text-[26px] text-gray-700">Dr Raj Kadam</p>
+                <p className="text-[16px] mt-3 mb-3 font-medium">Consultant cardiologist</p>
+                <a href="" className="text-blue-400 border-0 border-b-2 border-blue-400 font-bold text-[14px] mt-3">View profile</a>
+              </div>
+            </div>
+
+            
+          </SwiperSlide>
+
+
+          <SwiperSlide>
+            <div className="doctor-1 flex flex-col justify-center items-center mt-9 ">
+              <img src="images/Doctor-1.png" alt="" />
+              <div className="name-1 flex flex-col items-center">
+                <p className="mt-5 font-bold text-[26px] text-gray-700">Dr Raj Kadam</p>
+                <p className="text-[16px] mt-3 mb-3 font-medium">Consultant cardiologist</p>
+                <a href="" className="text-blue-400 border-0 border-b-2 border-blue-400 font-bold text-[14px] mt-3">View profile</a>
+              </div>
+            </div>
+
+            
+          </SwiperSlide>
+
+
+          <SwiperSlide>
+            <div className="doctor-1 flex flex-col justify-center items-center mt-9 ">
+              <img src="images/Doctor-1.png" alt="" />
+              <div className="name-1 flex flex-col items-center">
+                <p className="mt-5 font-bold text-[26px] text-gray-700">Dr Raj Kadam</p>
+                <p className="text-[16px] mt-3 mb-3 font-medium">Consultant cardiologist</p>
+                <a href="" className="text-blue-400 border-0 border-b-2 border-blue-400 font-bold text-[14px] mt-3">View profile</a>
+              </div>
+            </div>
+
+            
+          </SwiperSlide>
+          {/* Repeat SwiperSlide components as needed */}
+        </Swiper>
+      </div>
+
+    
 
     </div>
   </div>
@@ -160,34 +247,45 @@ export default function Home() {
         <h3 className=" font-semibold text-[24px] mt-5">Technology</h3>
         <p className="  px-32 mt-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
     </div>
-    <div className="Technologies-card-container flex justify-center items-center gap-11">
-      <div className="left-soliddd">
-        <img src="images/circle-arrow-up-left.png" alt="" />
-      </div>
-    <div className="tecnology-sliders flex justify-center mt-8 mb-8">
-    <div className="technology-1 bg-white [border-bottom-left-radius:1rem] [border-top-right-radius:2rem] [border-top-left-radius:2rem] h-72 ">
-      <img className="" src="images/Technology-img-1.png" alt="" />
-      <p className="text-center w-full mt-2 font-semibold">NMC Health</p>
-     </div>
-    </div>
-
-    <div className="tecnology-sliders flex justify-center mt-8 mb-8">
-    <div className="technology-1 bg-white [border-bottom-left-radius:1rem] [border-top-right-radius:2rem] [border-top-left-radius:2rem] h-72 ">
-      <img className="" src="images/Technology-img-1.png" alt="" />
-      <p className="text-center w-full mt-2 font-semibold">NMC Health</p>
-     </div>
-    </div>
-    <div className="tecnology-sliders flex justify-center mt-8 mb-8">
-    <div className="technology-1 bg-white [border-bottom-left-radius:1rem] [border-top-right-radius:2rem] [border-top-left-radius:2rem]  h-72 ">
-      <img className="" src="images/Technology-img-1.png" alt="" />
-      <p className="text-center w-full mt-2 font-semibold">NMC Health</p>
-     </div>
-    </div>
-
-    <div className="right-soliddd">
-        <img src="images/circle-arrow-up-right.png" alt="" />
-      </div>
-    </div>
+    <Swiper
+                slidesPerView={3}
+                spaceBetween={-400}
+                loop={true}
+                autoplay={{
+                  delay: 2500,
+                  disableOnInteraction: false,
+                }}
+                pagination={{
+                  clickable: true,
+                }}
+                navigation={true}
+                modules={[Navigation, Autoplay]}
+                className="mySwiper border border-gray-700 w-4/5 "
+                breakpoints={{
+                  320: {
+                    slidesPerView: 1,
+                    spaceBetween: 10,
+                  },
+                  640: {
+                    slidesPerView: 2,
+                    spaceBetween: 10,
+                  },
+                  1024: {
+                    slidesPerView: 3,
+                    spaceBetween: -30,
+                  },
+                }}
+              >
+                {[...Array(12)].map((_, index) => (
+                  <SwiperSlide key={index}>
+                    <div className="technology-1  [border-bottom-left-radius:1rem] [border-top-right-radius:2rem] [border-top-left-radius:2rem] h-72">
+                      <img src="images/Technology-img-1.png" alt={`Technology ${index + 1}`} />
+                      <p className="text-center w-full mt-2 font-semibold">NMC Health</p>
+                    </div>
+                  </SwiperSlide>
+                ))}
+              </Swiper>
+         
   </div>
 
 
@@ -210,9 +308,9 @@ export default function Home() {
       </div>
   </div>
   <div className="h-screen items-center justify-center">
-    <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
+    <Swiper navigation={true} modules={[Navigation]} className="mySwiper ">
       <SwiperSlide>
-        <div className='flex justify-center items-center flex-wrap '>
+        <div className='flex justify-center items-center md:flex-row sm:flex-col-reverse '>
           <img className='object-contain' src="images/Testimonial-img-1.png" alt="" />
           <img className='object-contain' src="images/Testimonial-img-2.png" alt="" />
         </div>
@@ -271,7 +369,7 @@ export default function Home() {
 
     <div className="location-flex-container h-full flex justify-center items-center gap-12 flex-wrap">
       <div className="h-full ">
-      <div class="h-[286px]  mt-[3.2rem] overflow-hidden w-[600px]  rounded-xl">
+      <div class="h-[286px]   overflow-hidden w-[600px]  rounded-xl">
   <iframe
     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2442.7805937076932!2d-0.903048924336784!3d52.24736875637985!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48770eea1465e283%3A0x42da424253c69848!2s42%20Semilong%20Rd%2C%20Semilong%2C%20Northampton%20NN2%206BU%2C%20UK!5e0!3m2!1sen!2sin!4v1712657999732!5m2!1sen!2sin"
     class="w-full h-[350px] border-0"
