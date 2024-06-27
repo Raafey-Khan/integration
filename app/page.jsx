@@ -249,22 +249,19 @@ export default function Home() {
     </div>
     <Swiper
                 slidesPerView={3}
-                spaceBetween={-400}
+                spaceBetween={-999}
                 loop={true}
-                autoplay={{
-                  delay: 2500,
-                  disableOnInteraction: false,
-                }}
+              
                 pagination={{
                   clickable: true,
                 }}
                 navigation={true}
                 modules={[Navigation, Autoplay]}
-                className="mySwiper border border-gray-700 w-4/5 "
+                className="mySwiper w-full "
                 breakpoints={{
                   320: {
                     slidesPerView: 1,
-                    spaceBetween: 10,
+                    spaceBetween: -30,
                   },
                   640: {
                     slidesPerView: 2,
@@ -278,14 +275,21 @@ export default function Home() {
               >
                 {[...Array(12)].map((_, index) => (
                   <SwiperSlide key={index}>
-                    <div className="technology-1  [border-bottom-left-radius:1rem] [border-top-right-radius:2rem] [border-top-left-radius:2rem] h-72">
-                      <img src="images/Technology-img-1.png" alt={`Technology ${index + 1}`} />
-                      <p className="text-center w-full mt-2 font-semibold">NMC Health</p>
-                    </div>
+                    
+
+                    <div className="tecnology-sliders  ml-20  mr-20  flex justify-center mt-8 mb-8  w-fit    ">
+    <div className="technology-1  bg-white [border-bottom-left-radius:1rem] [border-top-right-radius:2rem] [border-top-left-radius:2rem] h-72 ">
+      <img className="" src="images/Technology-img-1.png" alt="" />
+      <p className="text-center w-full mt-2 font-semibold">NMC Health</p>
+     </div>
+    </div>
+   
+                    
+
                   </SwiperSlide>
                 ))}
               </Swiper>
-         
+  
   </div>
 
 
